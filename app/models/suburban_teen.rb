@@ -1,6 +1,10 @@
 class SuburbanTeen < ApplicationRecord
   attr_accessor :cursed
 
+  def say_something
+    Faker::StrangerThings.quote
+  end
+
   def watch_cursed_tape
     ActiveSupport::Duration.class_eval do
       def from_now(time = ::Time.current)
